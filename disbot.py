@@ -20,7 +20,7 @@ async def on_message(message):
 
   if message.content.startswith('$greet'):
       r = random.randint(0, len(greets))
-      await message.channel.send(greets[r] + ' <@{}>'.format(message.content.split()[-1]))
+      await message.channel.send(greets[r] + ' {}'.format(message.content.split()[-1]))
 
   if message.content.startswith('$cmds'):
       await message.channel.send('\n'.join(cmds))
